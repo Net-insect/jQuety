@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery的选择器学习</title>
+    <!--jquery的引用 3.3.1版本的jquery   min代表代码被压缩过的-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+
+<h1>选择器的使用</h1>
+
+<h2>元素选择器测试</h2>
+<h3 id="h3">id选择器测试</h3>
+<h4 class="h4">class选择器测试</h4>
+
+
+
+
+<button>元素选择器</button>
+
+<input type="button" id="button"  value="id选择器" />
+
+<input type="button" class="button" value="class选择器" />
+
+
+<input type="button" id="dangqian"  value="this当前选择器" />
+
+
+
+
+
+<script>
+    //元素选择器
+    $(document).ready(function(){
+        //当按钮元素点击时执行函数
+        $("button").click(function(){
+            //选择p元素全部隐藏
+            $("h2").hide();
+        });
+    });
+</script>
+<script>
+    //id选择器 加上#号代表查找id
+    $(document).ready(function(){
+        //当按钮绑定的id点击时执行函数
+        $("#button").click(function(){
+            //选择绑定为h3的id隐藏
+            $("#h3").hide();
+        });
+    });
+</script>
+<script>
+    //class 选择器 加上.查找对应的class
+    $(document).ready(function(){
+        //当按钮绑定的class点击时执行函数
+        $(".button").click(function(){
+            //选择class为h4的全部隐藏
+            $(".h4").hide();
+        });
+    });
+</script>
+<script>
+    //this当前选择器 选择当前的选择器
+    $(document).ready(function(){
+       //当前的为这个
+        $("#dangqian").click(function(){
+           //然后this找到当前隐藏掉
+            $(this).hide();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
