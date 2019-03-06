@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery 事件</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+<h1>常用的 jQuery 事件方法</h1>
+
+<p id="p">鼠标单击事件</p>
+
+<p id="p2">鼠标双击事件</p>
+
+<p id="p3">鼠标指针触摸事件</p>
+
+<p id="p4">鼠标指针触摸离开事件</p>
+
+<p id="p5">鼠标指针触摸再点击事件</p>
+
+<p id="p6">鼠标指针触摸单击再松开时事件</p>
+
+<p id="p7">模拟光标悬停事件 hover</p>
+
+获得焦点触发事件<input type="text" id="p8"/>
+
+失去焦点触发事件<input type="text" id="p9"/>
+
+<script>
+    //当页面加载就直接执行的事件
+    $(document).ready(function () {
+        alert('页面加载成功');
+    })
+</script>
+<script>
+    //鼠标单击事件 click
+    $("#p").click(function(){
+        $(this).hide();
+    });
+</script>
+<script>
+    //鼠标双击事件 dblclick
+    $("#p2").dblclick(function(){
+        $(this).hide();
+    });
+</script>
+<script>
+    //鼠标指针触摸事件 mouseenter
+    $("#p3").mouseenter(function(){
+        $(this).hide();
+    });
+</script>
+<script>
+    //鼠标指针触摸离开事件 mouseleave
+    $("#p4").mouseleave(function(){
+        $(this).hide();
+    });
+</script>
+<script>
+    //当鼠标指针移动到元素上方，并单击时事件 mouseleave
+    $("#p5").mousedown(function(){
+        $(this).hide();
+    });
+</script>
+<script>
+    //当鼠标指针移动到元素上方，并单击再松开时事件 mouseup
+    $("#p6").mouseup(function(){
+        $(this).hide();
+    });
+</script>
+<script>
+    //模拟光标悬停事件 hover
+    //当鼠标移动到元素上时，会触发指定的第一个函数;当鼠标移出这个元素时，会触发指定的第二个函数
+    $("#p7").hover(
+        function(){
+            alert("你进入了 第一个函数!");
+        },
+        function () {
+            alert("你进入了 第二个函数!");
+        }
+    );
+</script>
+<script>
+    //当input元素获得焦点时，发生 focus 事件。
+    $("#p8").focus(function(){
+            //this 得到当前选择 并加上样式
+             $(this).css("background-color","#cccccc");
+        });
+</script>
+<script>
+    //当input元素失去焦点时，发生 blur 事件。
+    $("#p9").blur(function(){
+        //this 得到当前选择 并加上样式
+        $(this).css("background-color","#cccccc");
+    });
+</script>
+
+
+
+</body>
+</html>
